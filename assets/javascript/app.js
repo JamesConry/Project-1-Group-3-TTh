@@ -164,7 +164,7 @@ $(document).ready(function() {
         .then(function(response) {
           results = response;
           numResults = results.length;
-          console.log(queryURL);
+          
           for(var i=0;i<results.length;i++){
             var holderBody = $("<tbody>")
             var holderRow = $("<tr>");
@@ -268,14 +268,14 @@ $(document).ready(function() {
           let longitude = currentBrewery.longitude
           let stopNumber = i + 1
           let mapIconString = 'assets/images/mapicons/number_'+ stopNumber +'.png';
-          console.log(mapIconString)
+          
         
           objectArray.push({latitude: latitude, longitude: longitude, icon: mapIconString})
         }
       }
-      console.log(objectArray) 
+      
       var dataPoints = objectArray.map(function (item) {
-        console.log(item.latitude)
+        
         return new H.clustering.DataPoint(item.latitude, item.longitude, 1, item);
       });
       
@@ -331,7 +331,7 @@ $(document).ready(function() {
       getNoisePresentation: function (noisePoint) {
         // Get a reference to data object our noise points
         var data = noisePoint.getData()
-        console.log(data.icon)
+        
           // Create a marker for the noisePoint
         var noiseMarker = new H.map.Marker(noisePoint.getPosition(), {
             // Use min zoom from a noise point
